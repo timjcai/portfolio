@@ -2,19 +2,20 @@
 import React, { FC, useState } from "react";
 import { Subheader } from "./Text";
 
-type Experience =
+type ExperienceType =
     | "education"
     | "work experience"
     | "freelance"
     | "entrepreneurship";
 
 export const Experiences: FC = () => {
-    const [experienceTab, setExperienceTab] = useState<Experience>("education");
+    const [experienceTab, setExperienceTab] =
+        useState<ExperienceType>("education");
 
     function handleTabClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         e.preventDefault();
         console.log(e);
-        setExperienceTab(e.target.id);
+        setExperienceTab(e.currentTarget.id as ExperienceType);
     }
 
     return (
