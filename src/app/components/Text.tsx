@@ -6,7 +6,7 @@ type TextType = {
 
 export const Subheader: FC<TextType> = ({ label }) => {
     return (
-        <p className="tracking-[0.3em] text-lg font-semibold uppercase">
+        <p className="tracking-[0.3em] text-lg font-semibold uppercase pointer-events-none">
             {label}
         </p>
     );

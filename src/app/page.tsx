@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ProjectCard, Subheader } from "./components";
+import { Experiences } from "./components/Experiences";
 
 export default function Home() {
     const placeholderProjects = [
@@ -72,8 +73,9 @@ export default function Home() {
                     })}
                 </div>
             </section>
-            <section id="education"></section>
-            <section id="work-experience"></section>
+            <section id="education and work-experience">
+                <Experiences />
+            </section>
             <section id="footer"></section>
         </main>
     );
