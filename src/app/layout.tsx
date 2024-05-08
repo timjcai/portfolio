@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, DM_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const dm = DM_Mono({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 export const metadata: Metadata = {
     title: "Tim Cai | Portfolio",
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={inter.className}>{children}</body>
+            <body className={dm.className}>{children}</body>
         </html>
     );
 }
