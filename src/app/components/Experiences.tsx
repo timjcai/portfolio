@@ -1,21 +1,16 @@
 "use client";
 import React, { FC, useState } from "react";
 import { Subheader } from "./Text";
-
-type ExperienceType =
-    | "education"
-    | "work experience"
-    | "freelance"
-    | "entrepreneurship";
+import { ExpCategoryType, ExpData } from "../types";
 
 export const Experiences: FC = () => {
     const [experienceTab, setExperienceTab] =
-        useState<ExperienceType>("education");
+        useState<ExpCategoryType>("education");
 
     function handleTabClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         e.preventDefault();
         console.log(e);
-        setExperienceTab(e.currentTarget.id as ExperienceType);
+        setExperienceTab(e.currentTarget.id as ExpCategoryType);
     }
 
     return (
@@ -68,6 +63,29 @@ export const Experiences: FC = () => {
                 </div>
             </div>
             <div>{experienceTab}</div>
+        </div>
+    );
+};
+
+export const ExperienceRow: FC<ExpData> = ({
+    startDate,
+    endDate,
+    logoSRC,
+    companyName,
+    description,
+    location,
+    achievements,
+}) => {
+    return (
+        <div className="flex flex-row">
+            <div></div>
+            <div id="logo"></div>
+            <h2 id="companyName"></h2>
+            <p>{location}</p>
+            <button>
+                Learn more
+                <Icon />
+            </button>
         </div>
     );
 };
